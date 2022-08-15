@@ -1,0 +1,12 @@
+[Unit]
+Description=sddm-xorg-failsafe verify if xorg in failsafe mode
+After=plasma-ksmserver.service plasma-kcminit.service
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/Xbig-failsafe-alert
+Type=simple
+Slice=session.slice
+
+[Install]
+WantedBy=plasma-core.target
