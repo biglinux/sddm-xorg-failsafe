@@ -1,0 +1,15 @@
+#!/bin/bash
+
+
+if [ "$(ps -e | grep Xbig)" != "" ] && [ "$(cat /tmp/BIGLINUX_XORG_VERIFY_FAIL)" = "1" ]; then
+
+    sleep 10
+
+    kdialog --title $"Xorg em modo de compatibilidade" --error $"Ocorreu algum problema com o driver de vídeo.
+
+O sistema está utilizando o modo de compatibilidade fbdev.
+
+Não se preocupe, isto apenas deixa o funcionamento do sistema mais lento,
+principalmente para jogos e programas que utilizam recursos 3D."
+
+fi

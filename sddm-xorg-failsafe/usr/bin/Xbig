@@ -1,0 +1,9 @@
+#!/bin/sh
+
+rm -f /tmp/BIGLINUX_XORG_VERIFY_FAIL
+/usr/bin/X $@
+
+if [ "$?" = "1" ]; then
+	echo 1 > /tmp/BIGLINUX_XORG_VERIFY_FAIL
+	/usr/bin/X -config /etc/X11/xorg.conf.failsafe $@
+fi
