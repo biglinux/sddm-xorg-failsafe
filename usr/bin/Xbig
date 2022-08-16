@@ -1,9 +1,12 @@
 #!/bin/sh
 
 rm -f /tmp/BIGLINUX_XORG_VERIFY_FAIL
-/usr/bin/X $@
+/usr/lib/Xorg.wrap "$@"
+killall Xorg
+sleep 1
+/usr/lib/Xorg.wrap "$@"
 
 if [ "$?" = "1" ]; then
 	echo 1 > /tmp/BIGLINUX_XORG_VERIFY_FAIL
-	/usr/bin/X -config /etc/X11/xorg.conf.failsafe $@
+	/usr/lib/Xorg.wrap -config /etc/X11/xorg.conf.failsafe "$@"
 fi
