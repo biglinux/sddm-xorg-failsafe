@@ -1,0 +1,11 @@
+post_install() {
+    sed -i 's|^ *\bServerPath\b *=.*|ServerPath=/usr/bin/Xbig|' /etc/sddm.conf
+    sed -i 's|.*KillUserProcesses\b *=.*|KillUserProcesses=yes|' /etc/systemd/logind.conf
+    systemctl --global enable sddm-xorg-failsafe
+
+}
+
+pre_remove() {
+    sed -i 's|^ *\bServerPath\b *=.*|ServerPath=/usr/bin/X|' /etc/sddm.conf
+    systemctl --global disable sddm-xorg-failsafe
+} 
