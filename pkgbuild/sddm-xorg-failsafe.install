@@ -3,6 +3,51 @@ post_install() {
     sed -i 's|.*KillUserProcesses\b *=.*|KillUserProcesses=yes|' /etc/systemd/logind.conf
     systemctl --global enable sddm-xorg-failsafe
 
+
+#Nvidia support
+if [ "$(grep '/sbin/prime-offload' /usr/share/sddm/scripts/Xsetup)" = "" ]; then
+
+    echo '# nvidia prime support
+if [ -f "/sbin/prime-offload" ]; then
+    /sbin/prime-offload
+fi' >> /usr/share/sddm/scripts/Xsetup
+
+fi
+
+if [ "$(grep '/sbin/prime-switch' /usr/share/sddm/scripts/Xstop)" = "" ]; then
+
+    echo '# nvidia prime support
+if [ -f "/sbin/prime-switch" ]; then
+    /sbin/prime-switch
+fi' >> /usr/share/sddm/scripts/Xstop
+
+fi
+
+
+}
+
+post_upgrade() {
+
+#Nvidia support
+if [ "$(grep '/sbin/prime-offload' /usr/share/sddm/scripts/Xsetup)" = "" ]; then
+
+    echo '# nvidia prime support
+if [ -f "/sbin/prime-offload" ]; then
+    /sbin/prime-offload
+fi' >> /usr/share/sddm/scripts/Xsetup
+
+fi
+
+if [ "$(grep '/sbin/prime-switch' /usr/share/sddm/scripts/Xstop)" = "" ]; then
+
+    echo '# nvidia prime support
+if [ -f "/sbin/prime-switch" ]; then
+    /sbin/prime-switch
+fi' >> /usr/share/sddm/scripts/Xstop
+
+fi
+
+
 }
 
 pre_remove() {
