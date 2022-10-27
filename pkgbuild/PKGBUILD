@@ -8,7 +8,7 @@ url="https://github.com/biglinux/sddm-xorg-failsafe"
 pkgdesc="Use fbdev in xorg if default driver fail"
 source=('git+https://github.com/biglinux/sddm-xorg-failsafe.git')
 sha256sums=('SKIP')
-depends=('sddm' 'xf86-video-fbdev' 'kdialog')
+depends=('sddm' 'xf86-video-fbdev' 'kdialog' 'ly')
 makedepends=('git')
 install=${pkgname}.install
 

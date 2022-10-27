@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# If xorg or wayland not started use ly login manager
+if [ "$(ps -e | grep -i xorg)" = "" ] && [ "$(ps -e | grep -i wayland)" = "" ]; then
+	systemctl stop getty@tty2.service
+	#Force to use /usr/bin/Xbig to start Xorg
+	sed -i 's|.*x_cmd =.*|x_cmd = sudo /usr/bin/Xbig|g' /etc/ly/config.ini
+	chvt 2
+	sleep 1
+	systemctl start ly
+fi

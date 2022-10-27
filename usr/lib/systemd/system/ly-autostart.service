@@ -1,0 +1,12 @@
+[Unit]
+Description=Use ly login manager if graphical login fail
+After=multi-user.target
+
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/ly-autostart
+
+
+[Install]
+WantedBy=multi-user.target
