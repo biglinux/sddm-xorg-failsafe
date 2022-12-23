@@ -2,6 +2,7 @@ post_install() {
     sed -i 's|^ *\bServerPath\b *=.*|ServerPath=/usr/bin/Xbig|' /etc/sddm.conf
     sed -i 's|.*KillUserProcesses\b *=.*|KillUserProcesses=yes|' /etc/systemd/logind.conf
     systemctl --global enable sddm-xorg-failsafe
+    systemctl enable ly-autostart
     #systemctl enable ly-autostart
 
 #Nvidia support
@@ -58,6 +59,6 @@ fi
 pre_remove() {
     sed -i 's|^ *\bServerPath\b *=.*|ServerPath=/usr/bin/X|' /etc/sddm.conf
     systemctl --global disable sddm-xorg-failsafe
-    #systemctl disable ly-autostart
+    systemctl disable ly-autostart
 
 } 
