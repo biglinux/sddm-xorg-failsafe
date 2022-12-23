@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Auto failsafe to xorg
+
 rm -f /tmp/BIGLINUX_XORG_VERIFY_FAIL
 /usr/lib/Xorg.wrap "$@"
 killall Xorg
@@ -9,4 +11,9 @@ sleep 1
 if [ "$?" = "1" ]; then
 	echo 1 > /tmp/BIGLINUX_XORG_VERIFY_FAIL
 	/usr/lib/Xorg.wrap -config /etc/X11/xorg.conf.failsafe "$@"
+fi
+
+
+if [ "$?" = "1" ]; then
+        /usr/lib/Xorg.wrap -config /etc/X11/xorg.conf.failsafe.vesa "$@"
 fi

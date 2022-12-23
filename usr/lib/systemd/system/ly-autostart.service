@@ -1,5 +1,5 @@
 [Unit]
-Description=Use ly login manager if graphical login fail
+Description=Changed from ly to lxdm
 After=multi-user.target
 
 
