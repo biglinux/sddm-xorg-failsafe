@@ -6,14 +6,15 @@ rm -f /tmp/BIGLINUX_XORG_VERIFY_FAIL
 /usr/lib/Xorg.wrap "$@"
 killall Xorg
 sleep 1
-/usr/lib/Xorg.wrap "$@"
+echo 1 > /tmp/BIGLINUX_XORG_VERIFY_FAIL
+/usr/lib/Xorg.wrap -configdir /usr/share/X11/xorg.conf.d "$@"
 
 if [ "$?" = "1" ]; then
 	echo 1 > /tmp/BIGLINUX_XORG_VERIFY_FAIL
-	/usr/lib/Xorg.wrap -config /etc/X11/xorg.conf.failsafe "$@"
+	/usr/lib/Xorg.wrap -configdir /usr/share/X11/xorg.conf.d -config /etc/X11/xorg.conf.failsafe "$@"
 fi
 
 
 if [ "$?" = "1" ]; then
-        /usr/lib/Xorg.wrap -config /etc/X11/xorg.conf.failsafe.vesa "$@"
+        /usr/lib/Xorg.wrap -configdir /usr/share/X11/xorg.conf.d -config /etc/X11/xorg.conf.failsafe.vesa "$@"
 fi
