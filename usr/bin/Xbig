@@ -4,7 +4,7 @@
 
 rm -f /tmp/BIGLINUX_XORG_VERIFY_FAIL
 /usr/lib/Xorg.wrap "$@"
-killall Xorg
+#killall Xorg
 sleep 1
 /usr/lib/Xorg.wrap -configdir /usr/share/X11/xorg.conf.d "$@"
 
