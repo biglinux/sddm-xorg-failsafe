@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Wait 20 seconds to Xorg Start
+sleep 20
+
 # Changed to lxdm
 
 # If xorg or wayland not started use ly login manager
