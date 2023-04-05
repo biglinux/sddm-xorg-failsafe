@@ -1,0 +1,9 @@
+[Trigger]
+Type = Package
+Operation = Install
+Target =  sddm
+
+[Action]
+Description = Automatic enable big-preload
+When = PostTransaction
+Exec = /usr/share/libalpm/scripts/sddm-priority

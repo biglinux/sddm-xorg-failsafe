@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if [ "$(grep IOSchedulingClass /usr/lib/systemd/system/sddm.service)" = "" ]; then
+    sed -i "/Restart=always/a IOSchedulingClass=realtime\nCPUSchedulingPolicy=rr\nCPUSchedulingPriority=77\nIOSchedulingPriority=0" /usr/lib/systemd/system/sddm.service
+fi
