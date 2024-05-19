@@ -3,7 +3,7 @@
 # Auto failsafe to xorg
 
 rm -f /tmp/BIGLINUX_XORG_VERIFY_FAIL
-/usr/lib/Xorg.wrap "$@"
+/usr/lib/Xorg.wrap "$@ -ignoreABI"
 killall Xorg
 /usr/lib/Xorg.wrap "$@"
 
