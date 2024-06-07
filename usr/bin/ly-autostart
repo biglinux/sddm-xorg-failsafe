@@ -6,7 +6,7 @@ sleep 20
 # Changed to lxdm
 
 # If xorg or wayland not started use ly login manager
-if [ "$(ps -e | grep -e xorg -e wayland -e mutter -e kwin -e gnome-shell)" = "" ]; then
+if [ "$(ps -e | grep -e Xorg -e wayland -e mutter -e kwin -e gnome-shell)" = "" ]; then
 	# Force to use Xbig
 	sed -i 's|arg=.*|arg=/usr/bin/Xbig|g' /etc/lxdm/lxdm.conf
 	systemctl start lxdm
