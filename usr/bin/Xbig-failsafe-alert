@@ -4,18 +4,18 @@
 export TEXTDOMAINDIR="/usr/share/locale"
 export TEXTDOMAIN=sddm-xorg-failsafe
 
-
 if [ "$(ps -e | grep Xbig)" != "" ] && [ "$(cat /tmp/BIGLINUX_XORG_VERIFY_FAIL)" = "1" ]; then
 
     sleep 10
 
-    kdialog --title $"Xorg em modo de compatibilidade" --error $"Ocorreu algum problema com o driver de vídeo.
+    kdialog --title $"Xorg in Compatibility Mode" --error $"There was a problem with the video driver.
 
-O sistema está utilizando o modo de compatibilidade.
+The system is using compatibility mode.
 
-Não se preocupe, isto apenas deixa o funcionamento do sistema mais lento,
-principalmente para jogos e programas que utilizam recursos 3D.
+Do not worry, this only makes the system run slower,
+especially for games and programs that use 3D resources.
 
-Verifique os drivers de vídeo e a versão do kernel."
+Check the video drivers and kernel version."
 
 fi
+
