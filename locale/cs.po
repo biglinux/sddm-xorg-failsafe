@@ -1,0 +1,39 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the sddm-xorg-failsafe package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: sddm-xorg-failsafe\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: attranslate\n"
+
+msgid "Xorg in Compatibility Mode"
+msgstr "Xorg v režimu kompatibility"
+
+msgid ""
+"There was a problem with the video driver.\n"
+"\n"
+"The system is using compatibility mode.\n"
+"\n"
+"Do not worry, this only makes the system run slower,\n"
+"especially for games and programs that use 3D resources.\n"
+"\n"
+"Check the video drivers and kernel version."
+msgstr ""
+"Nastal problém s ovladačem videa.\n"
+"\n"
+"Systém používá režim kompatibility.\n"
+"\n"
+"Nemějte obavy, toto pouze zpomaluje běh systému,\n"
+"zejména pro hry a programy využívající 3D zdroje.\n"
+"\n"
+"Zkontrolujte ovladače videa a verzi jádra."

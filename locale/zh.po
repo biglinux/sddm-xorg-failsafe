@@ -1,0 +1,38 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the sddm-xorg-failsafe package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: sddm-xorg-failsafe\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: attranslate\n"
+
+msgid "Xorg in Compatibility Mode"
+msgstr "Xorg兼容模式"
+
+msgid ""
+"There was a problem with the video driver.\n"
+"\n"
+"The system is using compatibility mode.\n"
+"\n"
+"Do not worry, this only makes the system run slower,\n"
+"especially for games and programs that use 3D resources.\n"
+"\n"
+"Check the video drivers and kernel version."
+msgstr ""
+"视频驱动程序出现问题。\n"
+"\n"
+"系统正在使用兼容模式。\n"
+"\n"
+"不用担心，这只会使系统运行变慢，特别是对于使用3D资源的游戏和程序。\n"
+"\n"
+"检查视频驱动程序和内核版本。"
