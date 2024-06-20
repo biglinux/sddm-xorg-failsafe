@@ -10,6 +10,15 @@ killall Xorg
 sleep 1
 /usr/lib/Xorg.wrap -configdir /usr/share/X11/xorg.conf.d "$@"
 
+# To some problems with nvidia proprietary driver, force to use nouveau
+if lsmod | grep -q nouveau; then
+    killall Xorg
+	rmmod nouveau
+	modprobe nouveau modeset=1
+	sleep 1
+	/usr/lib/Xorg.wrap "$@"
+fi
+
 if [ "$?" = "1" ]; then
 	echo 1 > /tmp/BIGLINUX_XORG_VERIFY_FAIL
 	/usr/lib/Xorg.wrap -configdir /usr/share/X11/xorg.conf.d -config /etc/X11/xorg.conf.failsafe "$@"
