@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Verify module nvidia_drm in use
+if lsmod | grep -q -m1 nvidia_drm; then
+
+    # Detect version of module
+    nvidiaVersion=$(modinfo nvidia_drm -F version)
+
+    # If first number of version is 3 or 4, to filter drivers 3xx and 4xx
+    if [[ ${nvidiaVersion::1} == [34] ]]; then
+        # Disable wayland if enabled, because is incompatible with nvidia version
+        # Search for enabling wayland and not is commented line
+        fileWithConfig=$(grep 'DisplayServer=wayland' /etc/sddm.conf /etc/sddm.conf.d/*.conf | grep -v '# *DisplayServer')
+
+        # Disable wayland
+        IFS=$'\n'
+        for i in ${fileWithConfig%:*}; do
+            sed -i 's|DisplayServer=wayland|DisplayServer=x11|g' $i
+        done
+
+    fi
+
+fi

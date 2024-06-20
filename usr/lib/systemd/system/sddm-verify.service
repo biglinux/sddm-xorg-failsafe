@@ -1,0 +1,10 @@
+[Unit]
+Description=Verify by possible problems, like nvidia 470 with wayland configuration
+Before=sddm.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/sddm-verify
+
+[Install]
+WantedBy=graphical.target

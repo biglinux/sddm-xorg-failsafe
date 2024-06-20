@@ -3,7 +3,7 @@ post_install() {
     sed -i 's|.*KillUserProcesses\b *=.*|KillUserProcesses=yes|' /etc/systemd/logind.conf
     systemctl --global enable sddm-xorg-failsafe
     systemctl enable ly-autostart
-    #systemctl enable ly-autostart
+    systemctl enable sddm-verify
 
 #Nvidia support
 if [ "$(grep '/sbin/prime-offload' /usr/share/sddm/scripts/Xsetup)" = "" ]; then
@@ -30,9 +30,7 @@ fi
 post_upgrade() {
 
 systemctl enable ly-autostart
-
-# change minimal resolution to 1024x768
-sed -i 's|GRUB_GFXMODE="auto,1024x768"|GRUB_GFXMODE="1024x768,auto"|g' /etc/default/grub
+systemctl enable sddm-verify
 
 #Nvidia support
 if [ "$(grep '/sbin/prime-offload' /usr/share/sddm/scripts/Xsetup)" = "" ]; then
@@ -60,5 +58,5 @@ pre_remove() {
     sed -i 's|^ *\bServerPath\b *=.*|ServerPath=/usr/bin/X|' /etc/sddm.conf
     systemctl --global disable sddm-xorg-failsafe
     systemctl disable ly-autostart
-
+    systemctl disable sddm-verify
 } 
