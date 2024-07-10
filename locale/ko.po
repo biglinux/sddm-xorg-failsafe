@@ -2,22 +2,22 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the sddm-xorg-failsafe package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: sddm-xorg-failsafe\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: de\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: attranslate\n"
 
 msgid "Xorg in Compatibility Mode"
-msgstr "Xorg im Kompatibilitätsmodus"
+msgstr "호환 모드에서 Xorg"
 
 msgid ""
 "There was a problem with the video driver.\n"
@@ -29,11 +29,11 @@ msgid ""
 "\n"
 "Check the video drivers and kernel version."
 msgstr ""
-"Es gab ein Problem mit dem Videotreiber.\n"
+"비디오 드라이버에 문제가 있습니다.\n"
 "\n"
-"Das System verwendet den Kompatibilitätsmodus.\n"
+"시스템이 호환 모드를 사용 중입니다.\n"
 "\n"
-"Keine Sorge, dadurch wird das System nur langsamer, insbesondere\n"
-"bei Spielen und Programmen, die 3D-Ressourcen verwenden.\n"
+"걱정하지 마십시오. 이는 시스템이 느려지게 만들 뿐이며,\n"
+"특히 3D 자원을 사용하는 게임 및 프로그램에 대해 더욱 느려집니다.\n"
 "\n"
-"Überprüfen Sie die Videotreiber und die Kernel-Version."
+"비디오 드라이버와 커널 버전을 확인하십시오."
