@@ -3,17 +3,16 @@
 # Wait 20 seconds to Xorg Start
 sleep 20
 
-# Changed to lxdm
+# If xorg or wayland not started use lxdm login manager
+if ! ps -e | grep -q -e Xorg -e wayland -e mutter -e kwin -e gnome-shell; then
 
-# If xorg or wayland not started use ly login manager
-if [ "$(ps -e | grep -e Xorg -e wayland -e mutter -e kwin -e gnome-shell)" = "" ]; then
-	# Force to use Xbig
-	sed -i 's|arg=.*|arg=/usr/bin/Xbig|g' /etc/lxdm/lxdm.conf
-	systemctl start lxdm
-	#systemctl stop getty@tty2.service
-	#Force to use /usr/bin/Xbig to start Xorg
-	#sed -i 's|.*x_cmd =.*|x_cmd = sudo /usr/bin/Xbig|g' /etc/ly/config.ini
-	#chvt 2
-	#sleep 1
-	#systemctl start ly
+	sleep 5
+
+	# Second verify
+	if ! ps -e | grep -q -e Xorg -e wayland -e mutter -e kwin -e gnome-shell; then
+
+		# Force to use Xbig
+		sed -i 's|arg=.*|arg=/usr/bin/Xbig|g' /etc/lxdm/lxdm.conf
+		systemctl start lxdm
+	fi
 fi
