@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the sddm-xorg-failsafe package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: sddm-xorg-failsafe\n"
@@ -15,10 +14,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
-
 msgid "Xorg in Compatibility Mode"
 msgstr "Xorg兼容模式"
-
 msgid ""
 "There was a problem with the video driver.\n"
 "\n"
